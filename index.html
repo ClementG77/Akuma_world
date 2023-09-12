@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html style="height: auto;width: auto;">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Akuma World</title>
+	<link rel="icon" type="image/png" sizes="303x289" href="src/img/devils.png">
+	<link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700">
+	<link rel="stylesheet" href="src/fonts/font-awesome.min.css">
+	<link rel="stylesheet" href="src/css/styles.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77"
+	style="font-family: Lora, serif;">
+	<nav class="navbar navbar-light navbar-expand-md fixed-top" id="mainNav" style="background: rgba(45,44,44,0.23);">
+		<div class="container"><a class="navbar-brand" href="."><span
+					style="font-size: 27px;">Akuma</span></a><button data-bs-toggle="collapse"
+				class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button"
+				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" value="Menu"
+				style="background: rgba(0,0,0,0);"><i class="fa fa-bars"></i></button>
+			<div class="collapse navbar-collapse" id="navbarResponsive"
+				style="background: rgba(228,27,27,0);padding: 10px;">
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item nav-link"><a class="nav-link" href="#mint">MINT</a></li>
+					<li class="nav-item nav-link"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+					<li class="nav-item nav-link"><a class="nav-link" href="#team">Team</a></li>
+					<li class="nav-item nav-link"><a class="nav-link" href="#faq">FAQ</a></li>
+				</ul>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item nav-link"><a class="nav-link" href="https://discord.gg/akumanft"><svg
+								xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+								viewBox="0 0 16 16" class="bi bi-discord" style="width: 20px;height: 20px;">
+								<path
+									d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z">
+								</path>
+							</svg></a></li>
+					<li class="nav-item nav-link"><a class="nav-link" href="https://twitter.com/Akuma_NFTs"><svg
+								xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+								viewBox="0 0 16 16" class="bi bi-twitter" style="width: 20px;height: 20px;">
+								<path
+									d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z">
+								</path>
+							</svg></a></li>
+					<li class="nav-item nav-link"><a class="nav-link" href="https://opensea.io/collection/akuma-world"><img
+								src="src/img/opensea.png" style="width: 20px;height: 20px;"></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<header class="masthead" style="background: url(&quot;src/img/AkumaBack.webp&quot;) center / cover no-repeat;">
+		<div class="intro-body" style="height: 1000px;">
+			<div class="container d-flex flex-column justify-content-center align-items-center">
+				<h1 style="font-size:3em;">Akuma</h1>
+				<div class="row col-6">
+					<div class="col-lg-12 col-xl-12">
+						<div class="HeaderText"><span style="font-size: 1.2em"><br>Akuma is an NFT Collection project aiming to mix the NFT
+								community and Japanese/Asian culture lovers.<br>This project focuses on the demons
+								and demonic creatures of ancient Japan. It also mixes anime culture with its own
+								design.<br><br><br></span></div>
+					</div>
+					<div class="col-lg-12 col-xl-12">
+						<div class="d-flex flex-column align-items-center HeaderMore"><a
+								class="d-flex flex-column align-items-center" href="#mint"
+								style="color: rgb(255,255,255);font-size: 1.2em;">Learn more<svg
+									xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+									viewBox="0 0 16 16" class="bi bi-arrow-down-circle"
+									style="width: 25px;height: 25px;margin-top: 0.5rem;color: rgb(255, 255, 255);"
+									href="#about">
+									<path fill-rule="evenodd"
+										d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z">
+									</path>
+								</svg></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="text-center content-section" id="mint" style="background: #171616;">
+		<div class="container" data-aos="fade-up" data-aos-delay="400">
+			<div class="d-flex flex-column align-items-center flex-sm-row"
+				style="border-radius: 23px;border: 4px solid rgb(248,248,248);"><img id="myGIF" class="img-fluid"
+					src="src/img/Akuma.webp"
+					style="border-radius: 18px;border-style: solid;box-shadow: 0px 0px 17px rgb(98,97,97);"
+					width="350px" height="350px">
+				<div id="connect" class="d-flex flex-column flex-grow-1">
+					<h1><br>Mint an Akuma<br></h1>
+					<h3 class="text-capitalize" style="margin-bottom: 1.5em;"><br>Are you Whitelist?<br></h3><button
+						class="btn btn-dark text-center d-flex m-auto justify-content-xl-center align-items-xl-center"
+						type="button" style="width: 75%;height: 75%;border-radius: 29px;"
+						onclick="connectWallet()">Connect Wallet<img class="img-fluid" src="src/img/metamask.png"
+							style="width: 10%;height: 10%;"></button>
+				</div>
+				<div id="nonWL" class="d-none flex-column flex-grow-1">
+					<h1><br>Mint an Akuma<br></h1>
+					<h3 class="text-capitalize" style="margin-bottom: 1.5em;"><br>You are not Whitelisted!<br>
+					</h3>
+					<h5 class="text-capitalize"><br>Minting price : 0.075eth<br>Max NFT per Transaction : <span id="nonWL-max"></span></h5>
+					<p class="" style="margin-bottom: 10px;">
+						Total: <span id="totalETH" style="">0.05</span> ETH
+					</p>
+					<div class="d-flex m-auto justify-content-xl-center align-items-xl-center" >
+						
+							<button onclick="Decrement()" type="button" class="btn-minus" style="background: white;
+							position: relative;
+							color: #445c7f;
+							font-weight: 700;
+							text-align: center;
+							letter-spacing: 2px;
+							background-position: 0 -15;
+							padding:7px 15px;
+							border: 0px solid black;
+							border-radius: 88px;font-size: 20px;margin-right: 5px;margin-left:5px;">-</button>
+					  <input type="text" onKeyDown="return false" value="1" min="1" max="4" data-ruler="quantity" id="totalNFT" style="border: 0px solid black;
+								  text-align: center;
+								  background: white;color: #445c7f; padding-top:5px; padding-bottom: 5px;
+								  border-radius: 50px;
+								  width: 100px;line-height: 1.5;font-size: 20px;">
+					  <button onclick="Increment()" type="button" class="btn-plus" style="background: white;
+							position: relative;
+							color: #445c7f;font-weight: 700;
+							text-align: center;
+							letter-spacing: 2px;
+							background-position: 0 -15;
+							padding:7px 15px;
+							border: 0px solid black;
+							border-radius: 88px;font-size: 20px;margin-right:18px;margin-left:5px;
+							">+</button>
+							<button
+							class="btn btn-dark text-center d-flex m-auto justify-content-xl-center align-items-xl-center"
+							type="button" style="width: 70%;height: 70%;border-radius: 29px;"
+							onclick="mintNft()">Mint Akuma</button></div>
+				</div>
+				<div id="WL" class="d-none flex-column flex-grow-1" >
+					<h1><br>Mint an Akuma<br></h1>
+					<h3 class="text-capitalize" style="margin-bottom: 1.5em;"><br>Congratulation you are Whitelist!<br>
+					</h3>
+					<h5 class="text-capitalize"><br>Minting price : 0.05eth<br>Max NFT per Transaction : <span id="WL-max"></span></h5>
+						<p class="" style="margin-bottom: 10px;">
+                            Total: <span id="totalETHWL" style="">0.05</span> ETH
+                        </p>
+					<div class="d-flex m-auto justify-content-xl-center align-items-xl-center">
+						
+							<button onclick="DecrementWL()" type="button" class="btn-minus" style="background: white;
+							position: relative;
+							color: #445c7f;
+							font-weight: 700;
+							text-align: center;
+							letter-spacing: 2px;
+							background-position: 0 -15;
+							padding:7px 15px;
+							border: 0px solid black;
+							border-radius: 88px;font-size: 20px;margin-right: 5px;margin-left:5px;">-</button>
+					  <input type="text" onKeyDown="return false" value="1" data-ruler="quantity" id="totalNFTWL" style="border: 0px solid black;
+								  text-align: center;
+								  background: white;color: #445c7f; padding-top:5px; padding-bottom: 5px;
+								  border-radius: 50px;
+								  width: 100px;line-height: 1.5;font-size: 20px;">
+					  <button onclick="IncrementWL()" type="button" class="btn-plus" style="background: white;
+							position: relative;
+							color: #445c7f;font-weight: 700;
+							text-align: center;
+							letter-spacing: 2px;
+							background-position: 0 -15;
+							padding:7px 15px;
+							border: 0px solid black;
+							border-radius: 88px;font-size: 20px;margin-right:18px;margin-left:5px;
+							">+</button>
+							<button
+							class="btn btn-dark text-center d-flex m-auto justify-content-xl-center align-items-xl-center"
+							type="button" style="width: 70%;height: 70%;border-radius: 29px;"
+							onclick="mintNft()">Mint Akuma</button></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="text-center d-flex flex-column justify-content-xl-center align-items-xl-center content-section"
+		id="roadmap" style="background: #171616;">
+		<h1 class="text-capitalize">Roadmap</h1>
+		<section></section>
+		<div class="d-flex flex-column justify-content-around flex-sm-row" data-aos="fade-up" data-aos-delay="400"
+			style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid me-auto"
+				src="src/img/6651.webp" width="350px" height="350px" style="border-radius: 19px;">
+			<div style="margin: 11px;">
+				<h4 class="text-capitalize" style=" font-size:2.5em; margin-bottom: 0.5em;">The beginning&nbsp;<br>初め<br></h4>
+				<p style="font-size: 20px;margin: 0;padding: 0px;"><br />Gather a community of people who are curious about NFT and collecting, but who also like our style.<br />
+					To build a quality NFT collection to serve the community based on an Asian style mixing traditional equipment but also elements of Japanese pop culture.
+					<br />Collect 33% of the profits to benefit the people who supported us through various community events.<br /></p>
+			</div>
+		</div><img class="img-fluid" data-aos="fade-up" data-aos-delay="400"
+			src="src/img/520-5208980_curved-dotted-lines-with-arrow-.png" width="400px" height="400px">
+		<div class="d-flex flex-column justify-content-around flex-sm-row" data-aos="fade-up" data-aos-delay="400"
+			style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid me-auto"
+				src="src/img/6658.webp" width="350px" height="350px" style="border-radius: 19px;">
+			<div style="margin: 11px;">
+				<h4 class="text-capitalize" style=" font-size:2.5em; margin-bottom: 0.2em;">future<br>未来<br></h4>
+				<p style="font-size: 15px;margin: 0;padding: 0px;"><br> Demons, demonesses, here is a part of what will happen...<br/><br></p>
+				<ul style="text-align:left;font-size: 15px;">
+					<li>
+						Setting up various events through twitter and discord for our community.
+					</li>
+					<li>
+						Checking the collection on Open Sea.
+					</li>
+					<li>
+						Expanding the size of the team.
+					</li>
+					<li>
+						Large marketing campaign to recruit more followers in the Akuma World.
+					</li>
+				 </ul>
+				 <p style="font-size: 15px;margin: 0;padding: 0px;">Our project will not stop now, the future promises us many things:  <br>AWAKENINGS<br /></p>
+			</div>
+		</div><img class="img-fluid" data-aos="fade-up" data-aos-delay="400"
+			src="src/img/520-5208980_curved-dotted-lines-with-arrow-.png" width="400px" height="400px">
+		<div class="d-flex flex-column justify-content-around flex-sm-row" data-aos="fade-up" data-aos-delay="400"
+			style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid me-auto"
+				src="src/img/6633.webp" width="350px" height="350px" style="border-radius: 19px;">
+			<div style="margin: 11px;">
+				<h4 class="text-capitalize" style=" font-size:2.5em; margin-bottom: 0.5em;">Awakening<br>目覚め<br></h4>
+				<p style="font-size: 20px;margin: 0;padding: 0px; ">The Akuma demons didn&#39;t show all their potential. <br>They are unprecedented beings that can awaken to become arch-demons or for the most powerful demon kings.<br />These powers will make the whole Akuma World tremble, we don&#39;t think you&#39;re ready for what can happen.<br />Will you be able to get a blood gem for your demon?<br /><br /></p>
+			</div>
+		</div>
+	</section>
+	<section class="text-center content-section" id="team" style="background: #171616;">
+		<h1 class="text-capitalize">Team</h1>
+		<div class="container d-flex flex-column justify-content-around flex-sm-row" data-aos="fade-up-right"
+			data-aos-delay="300">
+			<div style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid"
+					src="src/img/0.webp" width="350px" height="350px" style="border-radius: 19px;">
+				<h2 class="text-capitalize" style="margin-top: 0.5em;">developper</h2>
+			</div>
+			<div style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid"
+					src="src/img/9.webp" width="350px" height="350px" style="border-radius: 19px;">
+				<div>
+					<h2 class="text-capitalize" style="margin-top: 0.5em;">developper</h2>
+				</div>
+			</div>
+			<div style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid"
+					src="src/img/12.webp" width="350px" height="350px" style="border-radius: 19px;">
+				<div>
+					<h2 class="text-capitalize" style="margin-top: 0.5em;">Community</h2>
+				</div>
+			</div>
+			<div style="margin: 24px;background: #262424;border-radius: 19px;"><img class="img-fluid"
+					src="src/img/19.webp" width="350px" height="350px" style="border-radius: 19px;">
+				<div>
+					<h2 class="text-capitalize" style="margin-top: 0.5em;">Artist</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="text-center content-section" id="faq" style="background: #171616;">
+		<div class="container" style="color: rgb(255,255,255);">
+			<section class="py-5" style="background: rgba(173,173,173,0);color: rgb(255,255,255);">
+				<h1 class="text-center text-success"
+					style="padding-top: 15px;padding-bottom: 15px;color: #FFFFFF!important;">FAQ</h1>
+				<div class="container d-flex flex-row" style="background: rgba(0,0,0,0);">
+					<div class="col-xl-4 col-lg-4 col-md-4">
+						<div style="border : px solid; border-radius : 10px;">
+							<p style="margin-top: 10px;color: rgb(255,0,0);">Answers TO</p>
+							<h3>Frequently asked questions</h3>
+						</div>
+					</div>
+					<div class="row col-xl-8 col-lg-8 col-md-8"
+						style="background: rgba(255,255,255,0);color: rgb(255,255,255);">
+						<div class="col-md-6 offset-md-3 col-xl-8 col-lg-8 col-md-8"
+							style="background: rgba(255,255,255,0);">
+							<div id="faqlist" class="accordion accordion-flush"
+								style="background: rgba(255,255,255,0);">
+								<div class="accordion-item"
+									style="background: rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.7);">
+									<h2 class="accordion-header"><button class="btn accordion-button collapsed"
+											type="button" data-bs-toggle="collapse"
+											data-bs-target="#content-accordion-1"
+											style="background: rgba(255,255,255,0);color: rgb(255,255,255);"><br><strong>How
+												can I mint AKUMA?</strong><br><br></button></h2>
+									<div id="content-accordion-1" class="accordion-collapse collapse"
+										data-bs-parent="#faqlist">
+										<p class="fw-bold accordion-body">It can be minted on our website during the
+											initial launch. Once all AKUMA are minted, you can only purchase them in the
+											secondary market as it is limited to 6,666 only.&nbsp;<br></p>
+									</div>
+								</div>
+								<div class="accordion-item"
+									style="background: rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.7);">
+									<h2 class="accordion-header"><button class="btn accordion-button collapsed"
+											type="button" data-bs-toggle="collapse"
+											data-bs-target="#content-accordion-2"
+											style="background: rgba(255,255,255,0);color: rgb(255,255,255);">How Many
+											AKUMA are available?</button></h2>
+									<div id="content-accordion-2" class="accordion-collapse collapse"
+										data-bs-parent="#faqlist" style="border-bottom-color: rgba(255,255,255,0.7);">
+										<p class="fw-bold accordion-body">6,546 Akuma with 120 for he free mint and the
+											development team!<br></p>
+									</div>
+								</div>
+								<div class="accordion-item"
+									style="background: rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.7);">
+									<h2 class="accordion-header"><button class="btn accordion-button collapsed"
+											type="button" data-bs-toggle="collapse"
+											data-bs-target="#content-accordion-3"
+											style="background: rgba(255,255,255,0);color: rgb(255,255,255);">When
+											Mint?</button></h2>
+									<div id="content-accordion-3" class="accordion-collapse collapse"
+										data-bs-parent="#faqlist">
+										<p class="fw-bold accordion-body" style="color: white">Saturday 5th March at 8pm
+											GMT</p>
+									</div>
+								</div>
+								<div class="accordion-item"
+									style="background: rgba(255,255,255,0);border-bottom-color: rgba(255,255,255,0.7);">
+									<h2 class="accordion-header"><button class="btn accordion-button collapsed"
+											type="button" data-bs-toggle="collapse"
+											data-bs-target="#content-accordion-4"
+											style="background: rgba(0,0,0,0);color: rgb(231,231,231);">Minting
+											Price?</button></h2>
+									<div id="content-accordion-4" class="accordion-collapse collapse"
+										data-bs-parent="#faqlist">
+										<p class="fw-bold accordion-body" style="color: white"><strong>Whitelist: 0.05
+												ETH</strong><br><strong>Public: 0.075 ETH</strong><br></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+	</section>
+	<footer style="background: #171616;">
+		<div class="container text-center">
+			<p>Copyright ©&nbsp;Akuma 2022</p>
+		</div>
+	</footer>
+	<script src="src/bootstrap/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+	<script src="src/js/script.min.js"></script>
+	<script src="bundle.js"></script>
+</body>
+
+</html>
