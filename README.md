@@ -1,4 +1,3 @@
 # Akuma_world
 
-## This project is available here  https://akumaworld.static.domains
-
+## This project isn't available online anymore but you can go through the code
