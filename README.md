@@ -19,13 +19,13 @@
 <h3 align='center'>Home Page 🏡</h3>
 
 <div align='center'>
-<img src='https://user-images.githubusercontent.com/105128267/218077675-f50ac9ae-8d2c-4196-aed8-f4490e142960.png'/>
+<img src='https://github.com/ClementG77/Akuma_world/assets/73953821/e0f59f5a-7510-411f-96fc-ba1b4ee0cf20'/>
 
 </div>
 <br>
 <h3 align='center'>Connect Wallet 🏡</h3>
 
 <div align='center'>
-<img src='https://user-images.githubusercontent.com/105128267/218077675-f50ac9ae-8d2c-4196-aed8-f4490e142960.png'/>
+<img src='https://github.com/ClementG77/Akuma_world/assets/73953821/f04b5c73-9184-4282-94f7-05f08f70f363'/>
 
 </div>
